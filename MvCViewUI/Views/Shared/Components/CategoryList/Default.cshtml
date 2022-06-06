@@ -1,0 +1,18 @@
+﻿@model CategoryListViewModel
+@{
+    ViewData["Title"] = "Index";
+   
+}
+
+<h1>Index</h1>
+<h2>Categories</h2>
+<div class="list-group">
+    <a href="/product/index" class="list-group-item">Show All</a>
+    @foreach(var category in Model.Categories)
+    {
+        @*Query String for category id parameter. Grouping by category*@
+       <a href="/product/index?category=@category.CategoryId" class="list-group-item">@category.CategoryName</a>
+    }
+
+
+</div>
